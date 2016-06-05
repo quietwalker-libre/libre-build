@@ -1,0 +1,75 @@
+#standard packages
+#! Packages Priority standard
+
+# debian launcher
+debian-installer-launcher
+
+#if ARCHITECTURES amd64
+ linux-image-amd64
+ linux-headers-amd64
+#endif
+
+#if ARCHITECTURES i386
+ linux-image-686-pae
+ linux-headers-686-pae
+#endif
+
+# parrot metapackages
+apt-parrot
+parrot-core
+
+# provide l10n for everybody
+locales-all
+console-setup
+
+#if ARCHITECTURES armel armhf
+ cgpt
+ vboot-utils
+ vboot-kernel-utils
+#endif
+
+#important stuff
+dctrl-tools
+cowsay
+cryptsetup
+ethtool
+expect
+gdb
+git
+iw
+lvm2
+openvpn
+parted
+gparted
+screen
+sendemail
+snmp
+snmpd
+suckless-tools
+sudo
+unrar
+upx-ucl
+zsh
+cone
+resolvconf
+dnsmasq
+zile
+mg
+
+
+#filesystem support
+jfsutils
+hfsplus
+hfsutils
+hfsprogs
+btrfs-tools
+e2fsprogs
+dosfstools
+mtools
+reiser4progs
+reiserfsprogs
+xfsprogs
+xfsdump
+
+syslinux-efi
+grub-pc
