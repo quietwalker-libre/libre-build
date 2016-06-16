@@ -9,7 +9,7 @@ export version=$4
 
 
 function helper() {
-	echo -e "Parrot Libre Build System
+	echo -e "Parrot Build System
 
 
 USAGE
@@ -22,8 +22,12 @@ EXPLAINATION
                 help will show this message, build will start
                 the build if correctly combined with variant, arch and version
 
-      variant - libre
+      variant - standard, full, cloud, studio, libre,
+                variant-gnome, variant-kde,
+                variant-lxde, variant-xfce
 
+                the edition of parrot that is going to
+                be taken from the templates folder
 
       arch    - i386, amd64, armel, armhf
                 the architecture that will be built

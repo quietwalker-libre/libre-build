@@ -87,12 +87,12 @@ cp -rT templates/common config
 
 [ ! $arch ] || sed -i "s/ISO_ARCH/$arch/g" config/includes.binary/isolinux/menu.cfg
 [ ! $version ] || sed -i "s/ISO_VERSION/$version/g" config/includes.binary/isolinux/menu.cfg
-[ ! $variant ] || sed -i "s/ISO_TITLE/Parrot Security Libre/g" config/includes.binary/isolinux/menu.cfg
+[ ! $variant ] || sed -i "s/ISO_TITLE/Parrot Security $variant/g" config/includes.binary/isolinux/menu.cfg
 
 lb config noauto \
 	--distribution "$dist" \
 	--debian-installer-distribution "$dist" \
-	--archive-areas "main" \
+	--archive-areas "main contrib non-free" \
 	--debootstrap-options "--keyring=templates/common/archives/parrot.key" \
 	--updates false \
 	--security false \

@@ -34,17 +34,10 @@ openvpn
 parted
 gparted
 screen
-sendemail
-snmp
-snmpd
-suckless-tools
-sudo
-unrar
-upx-ucl
 zsh
 cone
-resolvconf
-dnsmasq
+htop
+nload
 zile
 mg
 
@@ -62,6 +55,3 @@ reiser4progs
 reiserfsprogs
 xfsprogs
 xfsdump
-
-syslinux-efi
-grub-pc
