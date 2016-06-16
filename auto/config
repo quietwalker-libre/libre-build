@@ -10,7 +10,7 @@ if [ ! $arch ]; then
 	arch=$(dpkg --print-architecture)
 fi
 if [ ! $variant ]; then
-	variant="libre"
+	variant="standard"
 fi
 dist="parrot"
 lb_opts=""
@@ -82,18 +82,18 @@ for file in $(cd config && find . -type f); do
     rm -f config/$file
 done
 
-cp -rT template/common config
-[ ! -d template/parrot-libre ] || cp -rTL template/parrot-libre config
+cp -rT templates/common config
+[ ! -d templates/parrot-$variant ] || cp -rTL templates/parrot-$variant config
 
 [ ! $arch ] || sed -i "s/ISO_ARCH/$arch/g" config/includes.binary/isolinux/menu.cfg
-[ ! $version ] || sed -i "s/ISO_VERSION/libre/g" config/includes.binary/isolinux/menu.cfg
-[ ! $variant ] || sed -i "s/ISO_TITLE/Parrot Libre/g" config/includes.binary/isolinux/menu.cfg
+[ ! $version ] || sed -i "s/ISO_VERSION/$version/g" config/includes.binary/isolinux/menu.cfg
+[ ! $variant ] || sed -i "s/ISO_TITLE/Parrot Security Libre/g" config/includes.binary/isolinux/menu.cfg
 
 lb config noauto \
 	--distribution "$dist" \
 	--debian-installer-distribution "$dist" \
 	--archive-areas "main" \
-	--debootstrap-options "--keyring=template/common/archives/parrot.key" \
+	--debootstrap-options "--keyring=templates/common/archives/parrot.key" \
 	--updates false \
 	--security false \
 	--backports false \

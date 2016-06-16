@@ -3,7 +3,7 @@
 set -e
 set -o pipefail  # Bashism
 
-export variant=libre
+export variant=$2
 export arch=$3
 export version=$4
 
@@ -24,8 +24,6 @@ EXPLAINATION
 
       variant - libre
 
-                the edition of parrot that is going to
-                be taken from the templates folder
 
       arch    - i386, amd64, armel, armhf
                 the architecture that will be built
@@ -42,7 +40,7 @@ function build() {
 	lb clean
 	lb config
 	lb build &&\
-	mv live-image-*.hybrid.iso Parrot-libre-$version\_$arch.iso
+	mv live-image-*.hybrid.iso Parrot-$variant-$version\_$arch.iso
 }
 
 case $1 in

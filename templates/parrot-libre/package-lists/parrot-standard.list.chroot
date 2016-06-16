@@ -1,0 +1,13 @@
+## parrot metapackages
+parrot-interface
+parrot-plymouth
+parrot-sounds
+
+## other packages
+vinagre
+etherape
+torchat
+cone
+bleach
+vlc
+galculato

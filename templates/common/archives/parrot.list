@@ -1,0 +1,3 @@
+## stable repository
+deb http://mit-usa.archive.parrotsec.org/parrot parrot main
+#deb-src http://mit-usa.archive.parrotsec.org/parrot parrot main
