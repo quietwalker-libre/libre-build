@@ -10,6 +10,7 @@ linux-image-4.6.0-gnu-parrot-libre
 # parrot metapackages
 apt-parrot
 parrot-core
+wireless-tools
 
 # provide l10n for everybody
 locales-all
