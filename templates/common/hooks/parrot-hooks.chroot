@@ -8,6 +8,12 @@ cp /etc/passwd /etc/passwd-
 chown root:root /etc/passwd-
 chmod 0600 /etc/passwd-
 
+echo "Manually installing Atheros Open Firmware"
+wget https://github.com/quietwalker-libre/ath9k-open-firmware/raw/master/htc_7010.fw
+wget https://github.com/quietwalker-libre/ath9k-open-firmware/raw/master/htc_9271.fw
+mkdir /lib/firmware/ath9k_htc/
+cp htc_*.fw /lib/firmware/
+cp htc_9271.fw /lib/firmware/ath9k_htc/ && mv /lib/firmware/ath9k_htc/htc_9271.fw /lib/firmware/ath9k_htc/htc_9271-1.4.0.fw
 
 echo "Manually disabling inetd"
 systemctl disable inetd || true
